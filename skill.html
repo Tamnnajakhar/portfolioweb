@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills | Tamnna Jakhar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-bg: #070a0c;
+            --nav-bg: rgba(15, 23, 42, 0.9);
+            --accent-green: #22c55e;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* --- Same Header --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: var(--nav-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .brand { font-size: 1.6rem; font-weight: 700; color: #fff; }
+        .brand span { color: var(--accent-green); }
+
+        nav ul { display: flex; gap: 30px; list-style: none; }
+        nav a { color: var(--text-gray); font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--accent-green); }
+
+        /* --- Skills Section --- */
+        .skills-section {
+            padding: 120px 8% 80px;
+            background: radial-gradient(circle at top right, #0f172a, #070a0c);
+            min-height: 100vh;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .title span { border-bottom: 4px solid var(--accent-green); padding-bottom: 10px; }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-green);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item { margin-bottom: 20px; }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-green);
+            border-radius: 10px;
+            transition: 1.5s ease-in-out;
+        }
+
+        /* --- Resume Section --- */
+        .resume-download {
+            text-align: center;
+            margin-top: 80px;
+            padding: 50px;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 20px;
+            border: 1px dashed var(--accent-green);
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent-green);
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2);
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-5px);
+            background: #16a34a;
+        }
+
+        /* --- Same Footer --- */
+        .site-footer {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 80px 8% 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-box h3 { color: #fff; margin-bottom: 25px; position: relative; }
+        .footer-box h3 span { color: var(--accent-green); }
+        .footer-box h3::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 40px; height: 3px; background: var(--accent-green); }
+        
+        .footer-box ul { list-style: none; }
+        .footer-box ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: var(--text-gray); }
+
+        .footer-social { margin-top: 25px; display: flex; gap: 15px; }
+        .footer-social a {
+            width: 38px; height: 38px;
+            background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; color: var(--accent-green);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .footer-bottom { text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; }
+
+        @media(max-width: 768px) {
+            nav { display: none; }
+            .skills-section { padding: 100px 5% 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand">TA<span>MN</span>NA</div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                     <li><a href="skill.html">Skill</a></li>
+                      <li><a href="projcect .code .html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                   
+                    <li><a href="contact.html">Contact</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="skills-section">
+        <h2 class="title" data-aos="fade-down"><span>My Expertise</span></h2>
+        <p class="subtitle" data-aos="fade-up">I am constantly learning and evolving. Here is my technical stack based on my journey so far.</p>
+
+        <div class="skills-container">
+            
+            <div class="skill-category" data-aos="fade-right">
+                <h3><i class="fas fa-code"></i> Frontend & Design</h3>
+                <div class="skill-item">
+                    <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>UI/UX Design</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>WordPress</span><span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up">
+                <h3><i class="fas fa-terminal"></i> Programming</h3>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Java</span><span>70%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Python</span><span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Node.js</span><span>65%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 65%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>SEO Optimization</span><span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-left">
+                <h3><i class="fas fa-tools"></i> Tools & Soft Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Git & GitHub</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Problem Solving</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Time Management</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Team Work</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-download" data-aos="zoom-in">
+            <h2>Need a hard copy of my profile?</h2>
+            <p>Download my full resume for detailed information about my education and experience.</p>
+            <a href="YOUR_RESUME_FILE.pdf" download class="resume-btn">
+                <i class="fas fa-file-download"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>TA<span>MN</span>NA</h3>
+                <p>Passionate Web Developer building modern and user-friendly digital experiences.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/tamnnajakhar"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="new.html">Home</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact us.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-phone" style="color:var(--accent-green)"></i> +91 7374068744</li>
+                    <li><i class="fas fa-envelope" style="color:var(--accent-green)"></i> tamnnajakhar8822@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt" style="color:var(--accent-green)"></i> Rajasthan, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tamnna Jakhar | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
